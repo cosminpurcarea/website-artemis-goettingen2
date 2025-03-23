@@ -123,7 +123,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ language }) => {
       try {
         const savedPreferences = JSON.parse(localStorage.getItem("cookiePreferences") || "");
         setPreferences(savedPreferences);
-      } catch (e) {
+      } catch (_e) {
         // If there's an error parsing, use default preferences
         localStorage.setItem("cookiePreferences", JSON.stringify(defaultPreferences));
       }
